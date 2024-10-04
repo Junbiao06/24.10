@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动伪对象</title>
+
+
+
+
+
+
+
+<style>
+    .container{
+        width: 300px;
+        background-color: bisque;
+    }
+
+    .container::after{
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: brown;
+        margin: 20px;
+        float: left;
+    }
+
+    .box1{
+        width: 200px;
+        height: 200px;
+        background-color: purple;
+    }
+</style>
+
+
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div class="box1"></div>
+    
+
+    
+</body>
+</html>
