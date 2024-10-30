@@ -1,14 +1,28 @@
 #include <stdio.h>
+#include <string.h>
+char *get_char(char *a);
+
 int main(void)
 {
-    for (int i = 1; i <= 9; i++)
+    char *names[] = {"Dad", "Mom"};
+    char *numbers[] = {"001", "002"};
+
+    char *name = get_char(name);
+    for (int i = 0; i < 2; i++)
     {
-        for (int j = 1; j <= i; j++)
+        if (strcmp(names[i], name) == 0)
         {
-            printf("%dx%d=%d ", j, i, i * j);
-            if (i * j < 10 && j != 1)
-                printf(" ");
+            printf("Found. %s.\n", numbers[i]);
+            return 0;
         }
-        printf("\n");
     }
+    printf("Not Found.\n");
+    return 1;
+}
+
+char *get_char(char *a)
+{
+    printf("Name: ");
+    scanf("%c", &a);
+    return a;
 }
