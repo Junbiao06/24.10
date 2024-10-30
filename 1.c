@@ -1,20 +1,24 @@
 #include <stdio.h>
+int get_int(int a);
 int main(void)
 {
-    int n;
-    printf("How many times? ");
-    scanf("%i",&n);
-    for (int i = 1; i <= n; i++)
+    int number[] = {1, 5, 10, 50, 100, 500, 1000};
+    int a=get_int(a);
+    for (int i = 0; i < 7; i++)
     {
-        for (int j = 1; j <= n - i; j++)
+        if (a == number[i])
         {
-            printf(" ");
+            printf("Found.\n");
+            return 0;
         }
-        for (int k = 1; k <= 2 * i - 1; k++)
-        {
-            printf("#");
-        }
-        printf("\n");
     }
-    return 0;
+    printf("Not Found.\n");
+    return 1;
+}
+
+int get_int(int a)
+{
+    printf("Number: ");
+    scanf("%i", &a);
+    return a;
 }
